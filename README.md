@@ -1,0 +1,2 @@
+# smartmanagement
+for event management
