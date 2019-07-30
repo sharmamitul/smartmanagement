@@ -1,4 +1,4 @@
-package com.example.login;
+package com.example.login.register;
 
 
 import android.os.Bundle;
@@ -11,6 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.login.R;
+import com.example.login.apiclient.User;
+import com.example.login.MainActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;

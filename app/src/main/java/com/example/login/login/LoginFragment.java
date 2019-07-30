@@ -1,4 +1,4 @@
-package com.example.login;
+package com.example.login.login;
 
 
 import android.app.Activity;
@@ -15,15 +15,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.gson.GsonBuilder;
+import com.example.login.MainActivity;
+import com.example.login.R;
+import com.example.login.apiclient.User;
 
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 
 /**

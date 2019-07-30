@@ -5,6 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.login.apiclient.ApiClient;
+import com.example.login.apiclient.ApiInterface;
+import com.example.login.data.PrefConfig;
+import com.example.login.login.LoginFragment;
+import com.example.login.register.RegistrationFragment;
+import com.example.login.home.WelcomeFragment;
+
+
 public class MainActivity extends AppCompatActivity implements LoginFragment.OnLoginFormActivityListner, WelcomeFragment.OnLogoutListerner {
 
     public static PrefConfig prefConfig;
@@ -63,4 +71,5 @@ public class MainActivity extends AppCompatActivity implements LoginFragment.OnL
         prefConfig.writeName("User");
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new LoginFragment()).commit();
     }
+
 }
