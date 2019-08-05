@@ -32,10 +32,6 @@ public class WelcomeFragment extends Fragment {
     //private Button BnLogout;
     private BottomNavigationView bottonNav;
 
-    OnLogoutListerner logoutListerner;
-
-    // OnNavigationItemReselectedLister navigationItemReselectedLister;
-
     public interface OnLogoutListerner
     {
         public void logoutPerformed();
@@ -87,33 +83,7 @@ public class WelcomeFragment extends Fragment {
 
         });
 
-
-        /*  welcomeMsg = view.findViewById(R.id.txt_name_info);
-        welcomeMsg.setText("Welcome "+MainActivity.prefConfig.readName());
-        BnLogout = view.findViewById(R.id.bn_logout);
-
-        BnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                logoutListerner.logoutPerformed();
-            }
-        }); */
-
         return view;
     }
 
-    /* public void selectedNavigation() {
-
-        Log.d("welcome","invoke selectedNavigation");
-    }
-
-
-     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        Activity activity = (Activity) context;
-        logoutListerner = (OnLogoutListerner) activity;
-        // navigationItemReselectedLister = (OnNavigationItemReselectedLister) activity;
-
-    } */
 }

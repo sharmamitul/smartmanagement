@@ -26,7 +26,7 @@ import retrofit2.Response;
  */
 public class RegistrationFragment extends Fragment {
 
-    private EditText Name, UserName, UserPassword;
+    private EditText Userid, FName, LName, Email, Contact, CAddress, Designation, Role, Password;
     private Button BnRegister;
 
     public RegistrationFragment() {
@@ -39,9 +39,17 @@ public class RegistrationFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_registration, container, false);
-        Name = view.findViewById(R.id.txt_name);
-        UserName = view.findViewById(R.id.txt_user_name);
-        UserPassword = view.findViewById(R.id.txt_password);
+        //Name = view.findViewById(R.id.txt_name);
+        //UserName = view.findViewById(R.id.txt_user_name);
+        Userid = view.findViewById(R.id.txt_userid);
+        FName = view.findViewById(R.id.txt_fname);
+        LName = view.findViewById(R.id.txt_lname);
+        Email = view.findViewById(R.id.txt_email);
+        Contact = view.findViewById(R.id.txt_number);
+        CAddress = view.findViewById(R.id.txt_caddress);
+        Designation = view.findViewById(R.id.txt_designation);
+        Role = view.findViewById(R.id.txt_role);
+        Password = view.findViewById(R.id.txt_password);
         BnRegister = view.findViewById(R.id.bn_register);
 
         BnRegister.setOnClickListener(new View.OnClickListener(){
@@ -57,11 +65,17 @@ public class RegistrationFragment extends Fragment {
 
     public void performRegisteration() {
 
-        String name = Name.getText().toString();
-        String username = UserName.getText().toString();
-        String password = UserPassword.getText().toString();
+        String userid = Userid.getText().toString();
+        String firstname = FName.getText().toString();
+        String lastname = LName.getText().toString();
+        String email = Email.getText().toString();
+        String contact = Contact.getText().toString();
+        String company = CAddress.getText().toString();
+        String designation = Designation.getText().toString();
+        String role = Role.getText().toString();
+        String password = Password.getText().toString();
 
-        Call<User> call = MainActivity.apiInterface.performRegistration(name, username, password);
+        Call<User> call = MainActivity.apiInterface.performRegistration(userid, firstname, lastname, email, contact, company, designation, role, password);
         Log.d("register","Invoke Perform Registration");
         call.enqueue(new Callback<User>() {
             @Override
@@ -90,9 +104,16 @@ public class RegistrationFragment extends Fragment {
 
             }
         });
-        Name.setText("");
-        UserName.setText("");
-        UserPassword.setText("");
+        Userid.setText("");
+        FName.setText("");
+        LName.setText("");
+        Email.setText("");
+        Contact.setText("");
+        CAddress.setText("");
+        Designation.setText("");
+        Role.setText("");
+        Password.setText("");
+
     }
 
 }

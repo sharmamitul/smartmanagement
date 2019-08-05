@@ -11,11 +11,10 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST("register.php")
-    Call<User> performRegistration(@Field("name") String Name, @Field("user_name") String UserName, @Field("user_password") String UserPassword);
+    Call<User> performRegistration(@Field("userid") String Userid,@Field("firstname") String FirstName, @Field("lastname") String LastName, @Field("email") String Email, @Field("contact") String Contact, @Field("company") String Company, @Field("designation") String designation, @Field("role") String Role, @Field("password") String Password );
 
     @FormUrlEncoded
     @POST("login.php")
-    Call<User> performUserLogin(@Field("user_name") String UserName, @Field("user_password") String UserPassword);
-
+    Call<User> performUserLogin(@Field("userid") String UserName, @Field("password") String UserPassword);
 
 }

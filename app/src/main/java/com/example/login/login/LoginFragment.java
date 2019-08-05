@@ -92,20 +92,6 @@ public class LoginFragment extends Fragment {
         String password = UserPassword.getText().toString();
         Log.d("login","Invoke Perform Login method");
 
-
-        /* OkHttpClient.Builder okhttpClientBuilder= new OkHttpClient.Builder();
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-        okhttpClientBuilder.addInterceptor(logging);
-
-        Retrofit.Builder retrofit = new Retrofit.Builder().baseUrl(ApiClient.BASE_URL).addConverterFactory(GsonConverterFactory.create()).client(okhttpClientBuilder.build());
-
-        Retrofit retro = retrofit.build();
-
-        ApiInterface service = retro.create(ApiInterface.class);
-
-        Call<User> call = service.performUserLogin(username,password); */
-
        Call<User> call = MainActivity.apiInterface.performUserLogin(username, password);
 
         call.enqueue(new Callback<User>() {

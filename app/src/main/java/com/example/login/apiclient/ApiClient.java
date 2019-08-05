@@ -16,7 +16,7 @@ public class ApiClient {
 
     public static Retrofit getApiClient()
     {
-      //  Gson gson = new GsonBuilder().setLenient().create();
+
         if (retrofit_service==null)
         {
 
@@ -24,8 +24,6 @@ public class ApiClient {
             HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
             logging.setLevel(HttpLoggingInterceptor.Level.BODY);
             okhttpClientBuilder.addInterceptor(logging);
-
-           // retrofit = new Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build();
 
            Retrofit.Builder retrofit = new Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).client(okhttpClientBuilder.build());
 
